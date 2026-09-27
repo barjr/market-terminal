@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17
+    container_name: market-terminal-db
+    environment:
+      POSTGRES_USER: market
+      POSTGRES_PASSWORD: market
+      POSTGRES_DB: market_terminal
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
